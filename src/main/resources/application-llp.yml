@@ -1,0 +1,66 @@
+server:
+  port: 7777
+  servlet:
+    context-path: /demo
+
+spring:
+  data:
+    solr:
+      host: http://172.16.200.232:8080/solr//firmus-online
+      repositories:
+        enabled: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+    thymeleaf:
+      cache: false
+      encoding: UTF-8
+      mode: HTML
+      servlet:
+        content-type: text/html
+  devtools:
+    remote:
+      restart:
+        enabled: true
+  datasource:
+    url: jdbc:mysql://pc-2ze20nhftiacj7qxf.rwlb.rds.aliyuncs.com:3306/firmus2?characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    password: FH@rw2019_
+    username: fhrw
+  aop:
+    auto: true
+
+#redis
+redis:
+  database: 0
+  host: 127.0.0.1
+  password: ''
+  pool:
+    max-active: 200
+    max-idle: 10
+    max-wait: -1
+    min-idle: 0
+  port: 6380
+  timeout: 1000
+sessionCodeDb: 2
+
+#quartz
+quartz-pro:
+  instanceName[org.quartz.scheduler.instanceName]: limit-quartz
+  instance[org.quartz.scheduler.instanceId]: AUTO
+  isClustered[org.quartz.jobStore.isClustered]: true
+  jobStoreClass[org.quartz.jobStore.class]: org.quartz.impl.jdbcjobstore.JobStoreTX
+  driverDelegateClass[org.quartz.jobStore.driverDelegateClass]: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+  tablePrefix[org.quartz.jobStore.tablePrefix]: qrtz_
+  quartzDataSource[org.quartz.jobStore.dataSource]: myDS
+  dataSourceDriver[org.quartz.dataSource.myDS.driver]: com.mysql.jdbc.Driver
+  dataSourceUrl[org.quartz.dataSource.myDS.URL]: jdbc:mysql://pc-2ze150rwx0wi7cyw1.rwlb.rds.aliyuncs.com:3306/firmus_uat?characterEncoding=utf8
+  dataSourceUser[org.quartz.dataSource.myDS.user]: uat
+  dataSourcePassword[org.quartz.dataSource.myDS.password]: Firmus#2020
+  dataSourceValidationQuery[org.quartz.dataSource.myDS.validationQuery]: select 1
+  clusterCheckinInterval[org.quartz.jobStore.clusterCheckinInterval]: 200000
+  maxConnections[org.quartz.dataSource.myDS.maxConnections]: 5
+  threadCount[org.quartz.threadPool.threadCount]: 10
+
+quartzCron:
+  demo: 0/5 * * * * ?
