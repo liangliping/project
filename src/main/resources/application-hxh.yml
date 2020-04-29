@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+#mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///localhost?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8
+    username: root
+    password: root
+
+#模板引擎
+thymeleaf:
+  suffix: .html
+  prefix: classpath:/templates/
+  enabled: true
+  cache: false
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+quartzCron:
+  demo: 0/5 * * * * ?
