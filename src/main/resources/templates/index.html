@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
-    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title小图标-->
+    <link rel="icon" href="https://super-project.oss-cn-beijing.aliyuncs.com/timg.jpg" type="image/x-icon"/>
+    <title>超级工程</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/htmleaf-demo.css">
+    <link href="/css/signin.css" rel="stylesheet">
 
-    <title>超级工程首页</title>
 </head>
 <body>
-    <h1>超级工程引入bootstrap</h1>
+<div class="htmleaf-container">
+    <header class="htmleaf-header">
+        <h1>欢迎登陆超级系统</h1>
+    </header>
+    <div class="signin">
+        <div class="signin-head"><img src="https://super-project.oss-cn-beijing.aliyuncs.com/timg.jpg" width="120px" height="120px" alt="" class="img-circle"></div>
+        <form class="form-signin" role="form">
+            <input type="text" class="form-control" placeholder="用户名" required autofocus />
+            <input type="password" class="form-control" placeholder="密码" required />
+            <button class="btn btn-lg btn-warning btn-block" type="submit">登录</button>
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> 记住我
+            </label>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

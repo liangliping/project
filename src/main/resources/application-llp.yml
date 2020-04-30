@@ -8,6 +8,8 @@ spring:
     url: jdbc:mysql:///localhost?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8
     username: root
     password: 123456
+  mvc:
+    static-path-pattern: /**
 
 #模板引擎
 thymeleaf:
