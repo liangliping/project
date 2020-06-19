@@ -47,12 +47,10 @@ public class LoginController {
             map.put("message", "登陆成功！");
 
         } catch (UnknownAccountException e) {
-            e.printStackTrace();
             map.put("code", 2);
             map.put("message", "用户名不存在！");
             return map;
         } catch (IncorrectCredentialsException e){
-            e.printStackTrace();
             map.put("code", 3);
             map.put("message", "密码错误！");
             return map;
