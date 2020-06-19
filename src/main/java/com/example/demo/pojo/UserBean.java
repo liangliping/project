@@ -42,4 +42,13 @@ public class UserBean implements Serializable {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    public UserBean(int id, String account, String pwd) {
+        this.id = id;
+        this.account = account;
+        this.pwd = pwd;
+    }
+
+    public UserBean() {
+    }
 }

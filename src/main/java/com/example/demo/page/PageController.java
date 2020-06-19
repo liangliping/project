@@ -15,13 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/page")
 public class PageController {
 
+    /**
+     * index页面为默认页面 所以不用跳转 其他页面则需要在这里设置跳转
+     * @return
+     */
 
     /**
      * 跳转首页
      * @return
      */
-    @RequestMapping("/index")
-    public String toIndex(){
-        return "index";
+    @RequestMapping("/toLogin")
+    public String toShow(){
+        return "/login";
     }
 }
