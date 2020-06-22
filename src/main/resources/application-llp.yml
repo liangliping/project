@@ -5,9 +5,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql:///localhost?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8
-    username: root
-    password: 123456
+    url: jdbc:mysql://98.159.99.170:3306/a0622154721?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8
+    username: a0622154721
+    password: df1d6d60
   mvc:
     static-path-pattern: /**
 

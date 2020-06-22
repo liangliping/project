@@ -1,6 +1,8 @@
 package com.example.demo.service.login;
 
+import com.example.demo.dao.login.LoginDao;
 import com.example.demo.pojo.UserBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,6 +13,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class LoginServiceImpl implements LoginService {
+
+    @Autowired
+    private LoginDao dao;
 
     //加密后的值
     private static final String SUPER_LIANG_PWD = "0cdaa36b745dc1e4243bf7b40fb79244";
@@ -24,6 +29,9 @@ public class LoginServiceImpl implements LoginService {
         } else if ("superLiang".equals(username)) {
             bean = new UserBean(1, "superLiang", SUPER_LIANG_PWD);
         }
+
+        //int i = dao.queryTest();
+        //System.out.println("i = " + i);
         return bean;
     }
 }
