@@ -62,4 +62,14 @@ public class UserBean implements Serializable {
 
     public UserBean() {
     }
+
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
+    }
 }

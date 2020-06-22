@@ -21,11 +21,17 @@ public class PageController {
      */
 
     /**
-     * 跳转首页
+     * 跳转登录页面
      * @return
      */
     @RequestMapping("/toLogin")
-    public String toShow(){
+    public String toLogin(){
         return "/login";
+    }
+
+
+    @RequestMapping("/toShow")
+    public String toShow(){
+        return "/show";
     }
 }

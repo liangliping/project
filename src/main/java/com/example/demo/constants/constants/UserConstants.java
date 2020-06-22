@@ -12,9 +12,9 @@ import java.util.List;
  * Date: 2020/6/22 17:53 <br>
  */
 public class UserConstants {
-    //用户注册信息
-    private static UserBean user1 = new UserBean(1, "superHe", "18311156750", "2bdfc2fb0b891171ed8a0cd1aa99ca95");
-    private static UserBean user2 = new UserBean(2, "superLiang", "18903100844", "0cdaa36b745dc1e4243bf7b40fb79244");
+    //用户注册信息 需要字段可自行添加
+    private static UserBean user1 = new UserBean(1, "superHe", "22a43fbe3267faa448639dad376737ae", "18311156750");
+    private static UserBean user2 = new UserBean(2, "superLiang", "82168999052d2ed053392d3bb65492dd", "18903100844");
 
     //用户注册集合
     private static List<UserBean> list = new ArrayList<UserBean>();

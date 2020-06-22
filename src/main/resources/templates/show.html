@@ -1,12 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <!--title小图标-->
-    <link rel="icon" href="https://super-project.oss-cn-beijing.aliyuncs.com/timg.jpg" type="image/x-icon"/>
-    <title>超级工程主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- https://super-project.oss-cn-beijing.aliyuncs.com/beian.png 小图标-->
+    <link rel="icon" href="https://super-project.oss-cn-beijing.aliyuncs.com/beian.png" type="image/x-icon"/>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap3/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap3/css/bootstrap.css">
+
+    <script type="text/javascript"
+            src="../js/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <link rel="stylesheet"
+          href="../js/bootstrap-treeview/bootstrap-treeview.min.css">
+
+    <script type="text/javascript"
+            src="../js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+    <link rel="stylesheet"
+          href="../js/bootStrap-addTabs/bootstrap.addtabs.css">
+
+    <title>超级宇宙系统</title>
+
 </head>
 <body>
-<h1>测试权限拦截</h1>
+<!-- 顶部导航栏 -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar-header col-md-2">
+                <div style="margin-top: 10px">
+                    <img src="https://super-project.oss-cn-beijing.aliyuncs.com/timg.jpg" width="60" height="30">
+                </div>
+            </div>
+            <div class="navbar-header col-md-10">
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- 导航树 -->
+<div class="navbar-header col-md-2">
+    <div id="myTree"></div>
+</div>
+
+<!-- 选项卡 -->
+<div class="navbar-header col-md-9">
+    <!-- 新选项卡 -->
+    <ul class="nav nav-tabs" id="tablist">
+        <!-- <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">欢迎</a></li> -->
+    </ul>
+    <!-- 选项卡下内容 -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+
+        </div>
+    </div>
+
+</div>
+
+
 </body>
+<script type="text/javascript">
+    $(function () {
+
+        initTree();
+
+    });
+
+    //加载树
+    function initTree() {
+        $.ajax({
+            url: '../tree/getTrees',
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                //成功后回调参数  展示树节点信息
+                $('#myTree').treeview({
+                    data: data,
+                    onNodeSelected: function (event, node) {
+                        //选项卡
+                        $.addtabs.add({
+                            id: node.id,
+                            title: node.text,
+                            url: node.path
+                        });
+                    }
+                });
+            }
+        });
+    }
+</script>
 </html>

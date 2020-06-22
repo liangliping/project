@@ -2,8 +2,11 @@ package com.example.demo.service.login;
 
 import com.example.demo.constants.constants.UserConstants;
 import com.example.demo.constants.meiju.UserEnum;
+import com.example.demo.controller.login.LoginController;
 import com.example.demo.dao.login.LoginDao;
 import com.example.demo.pojo.UserBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +21,13 @@ import java.util.List;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-
-    //加密后的值
-    private static final String SUPER_LIANG_PWD = "0cdaa36b745dc1e4243bf7b40fb79244";
-    private static final String SUPER_HE_PWD = "2bdfc2fb0b891171ed8a0cd1aa99ca95";
+    private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Override
     public UserBean findUserInfoByName(String username) {
         UserBean bean = null;
         bean = UserConstants.getUserBeanByAccount(username);
+        logger.info("根据账号{}去到的用户信息", bean.toString());
         return bean;
     }
 
