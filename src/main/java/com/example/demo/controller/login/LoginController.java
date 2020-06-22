@@ -1,22 +1,22 @@
 package com.example.demo.controller.login;
 
 import com.example.demo.pojo.UserBean;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Description: LoginController <br>
@@ -24,10 +24,17 @@ import java.util.Map;
  * @author Liang lp
  * Date: 2020/4/30 10:42 <br>
  */
+@Api(tags = "登陆操作接口")
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
+
+    @ApiOperation(value="根据用户名登陆宇宙无敌超级项目", notes="登陆")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "userBean", value = "user用户实体对象", required = false, dataType = "User"),
+            @ApiImplicitParam(name = "request", value = "request请求对象", required = false, dataType = "HttpServletRequest")
+            })
     @RequestMapping("/login")
     @ResponseBody
     public HashMap<String, Object> login( UserBean userBean, HttpServletRequest request){
