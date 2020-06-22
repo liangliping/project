@@ -44,7 +44,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/toRole", "roles[系统人员]");*/
 
 
+        //静态资源不拦截
         filterChainDefinitionMap.put("/login/login", "anon");
+        filterChainDefinitionMap.put("/**", "anon");        // 对所有请求都不进行拦截
         filterChainDefinitionMap.put("/js/**", "anon");
         filterChainDefinitionMap.put("/login/logout", "logout");
         filterChainDefinitionMap.put("/*", "authc");

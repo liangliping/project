@@ -12,6 +12,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,7 @@ public class LoginController {
             @ApiImplicitParam(name = "userBean", value = "user用户实体对象", required = false, dataType = "User"),
             @ApiImplicitParam(name = "request", value = "request请求对象", required = false, dataType = "HttpServletRequest")
             })
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public HashMap<String, Object> login( UserBean userBean, HttpServletRequest request){
 
@@ -66,7 +67,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping("logout")
+    @RequestMapping(value = "/logout",method = RequestMethod.POST)
     public String logout(){
         return "view/login";
     }

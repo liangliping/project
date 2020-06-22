@@ -45,6 +45,7 @@
     $("#sub_btn").click(function () {
         $.ajax({
             url: "/login/login",
+            type: "post",
             data: $('#user_from').serialize(),
             success: function (data) {
                 console.log(data)
