@@ -1,9 +1,13 @@
 package com.example.demo.service.login;
 
+import com.example.demo.constants.constants.UserConstants;
+import com.example.demo.constants.meiju.UserEnum;
 import com.example.demo.dao.login.LoginDao;
 import com.example.demo.pojo.UserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Description: LoginServiceImpl <br>
@@ -14,8 +18,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Autowired
-    private LoginDao dao;
 
     //加密后的值
     private static final String SUPER_LIANG_PWD = "0cdaa36b745dc1e4243bf7b40fb79244";
@@ -24,14 +26,18 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public UserBean findUserInfoByName(String username) {
         UserBean bean = null;
-        if ("superHe".equals(username)) {
-            bean = new UserBean(1, "superHe", SUPER_HE_PWD);
-        } else if ("superLiang".equals(username)) {
-            bean = new UserBean(1, "superLiang", SUPER_LIANG_PWD);
-        }
-
-        //int i = dao.queryTest();
-        //System.out.println("i = " + i);
+        bean = UserConstants.getUserBeanByAccount(username);
         return bean;
+    }
+
+    public static void main(String[] args) {
+        String a = "superHe";
+        List<UserBean> bean = UserConstants.getUserBean();
+        for (UserBean userBean : bean) {
+            if (userBean.getAccount().equals(a)) {
+                System.out.println("存在");
+                break;
+            }
+        }
     }
 }

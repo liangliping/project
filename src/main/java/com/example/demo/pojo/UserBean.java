@@ -19,6 +19,8 @@ public class UserBean implements Serializable {
 
     private String pwd;
 
+    private String mobile;
+
     public int getId() {
         return id;
     }
@@ -43,10 +45,19 @@ public class UserBean implements Serializable {
         this.pwd = pwd;
     }
 
-    public UserBean(int id, String account, String pwd) {
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public UserBean(int id, String account, String pwd, String mobile) {
         this.id = id;
         this.account = account;
         this.pwd = pwd;
+        this.mobile = mobile;
     }
 
     public UserBean() {
