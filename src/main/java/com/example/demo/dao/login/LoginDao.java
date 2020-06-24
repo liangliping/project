@@ -12,6 +12,10 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface LoginDao {
 
+    /**
+     * 测试数据库
+     * @return
+     */
     @Select("select id from testDB where id = 1")
     int queryTest();
 }

@@ -37,7 +37,7 @@ public class Swagger2 {
                 .title("跟着分享牛学习Springboot源码分析系列课程")
                 .description("更多Spring Boot相关文章请关注分享牛的博客")
                 .termsOfServiceUrl("http://www.shareniu.com/")
-                .contact("牛牛")
+                .contact(new Contact("牛牛", "http://www.baidu.com", "331764991@qq.com"))
                 .license("Copyright 2017-2018 分享牛")
                 .version("1.0")
                 .build();

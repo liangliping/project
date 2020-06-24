@@ -13,19 +13,29 @@ public class NavBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    //id
+    /**
+     * id
+     */
     private Integer id;
 
-    //节点名
+    /**
+     * 节点名称
+     */
     private String text;
 
-    //父节点
+    /**
+     * 父节点
+     */
     private Integer pid;
 
-    //路径
+    /**
+     * //路径
+     */
     private String path;
 
-    //是否有子节点
+    /**
+     * //是否有子节点
+     */
     private boolean selectable;
 
     private List<NavBean> nodes;

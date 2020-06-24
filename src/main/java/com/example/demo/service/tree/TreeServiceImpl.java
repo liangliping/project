@@ -1,4 +1,4 @@
-package com.example.demo.service.TreeService;
+package com.example.demo.service.tree;
 
 import com.example.demo.constants.constants.TreeConstants;
 import com.example.demo.pojo.NavBean;
@@ -26,7 +26,11 @@ public class TreeServiceImpl implements TreeService {
         return findeTreeNode(id);
     }
 
-    // 递归查询
+    /**
+     *  // 递归查询
+     * @param pid
+     * @return
+     */
     private List<NavBean> findeTreeNode(Integer pid) {
         List<NavBean> trees = TreeConstants.getTreesAll(pid);
         for (NavBean nav : trees) {

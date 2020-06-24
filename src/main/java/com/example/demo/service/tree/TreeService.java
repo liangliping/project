@@ -1,4 +1,4 @@
-package com.example.demo.service.TreeService;
+package com.example.demo.service.tree;
 
 import com.example.demo.pojo.NavBean;
 

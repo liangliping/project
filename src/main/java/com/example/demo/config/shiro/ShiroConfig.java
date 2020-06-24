@@ -57,13 +57,13 @@ public class ShiroConfig {
 //        filterChainDefinitionMap.put("/*/*", "authc");
 
 
-        //filterChainDefinitionMap.put("/toUser", "roles[系统管理员]");
+/*        //filterChainDefinitionMap.put("/toUser", "roles[系统管理员]");
         //filterChainDefinitionMap.put("/toShopping", "roles[审核管理员]");
-        //filterChainDefinitionMap.put("/", "roles[店铺管理员]");
+        //filterChainDefinitionMap.put("/", "roles[店铺管理员]");*/
 
 
         // 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边
-        // <!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
+        //  authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
@@ -88,7 +88,11 @@ public class ShiroConfig {
         return userRealm;
     }
 
-    //配置自定义的密码比较器
+    /**
+     * //配置自定义的密码比较器
+     *
+     * @return
+     */
     @Bean(name = "credentialsMatcher")
     public CredentialsMatcher credentialsMatcher() {
         return new CredentialsMatcher();

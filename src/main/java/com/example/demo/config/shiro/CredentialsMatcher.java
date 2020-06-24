@@ -23,12 +23,12 @@ public class CredentialsMatcher extends SimpleCredentialsMatcher {
         //加密次数
         int hashIterations = 1;
         SimpleHash sh = new SimpleHash("md5", source, salt, hashIterations);
-        String Strsh = sh.toHex();
+        String stash = sh.toHex();
         //打印最终结果
-        System.out.println("正确密码为：" + Strsh);
+        System.out.println("正确密码为：" + stash);
         //获得数据库中的密码
         String dbPassword = (String) getCredentials(info);
         //进行密码的比对
-        return this.equals(Strsh, dbPassword);
+        return this.equals(stash, dbPassword);
     }
 }

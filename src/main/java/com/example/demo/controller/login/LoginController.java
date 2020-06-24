@@ -45,7 +45,7 @@ public class LoginController {
 
         //获取session
         HttpSession session = request.getSession();
-        HashMap<String, Object> map = new HashMap<String, Object>();
+        HashMap<String, Object> map = new HashMap<String, Object>(16);
 
         UsernamePasswordToken token = new UsernamePasswordToken(userBean.getAccount(), userBean.getPwd());
         Subject subject = SecurityUtils.getSubject();
