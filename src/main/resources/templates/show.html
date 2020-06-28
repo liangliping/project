@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -31,7 +31,12 @@
                     <img src="https://super-project.oss-cn-beijing.aliyuncs.com/timg.jpg" width="60" height="30">
                 </div>
             </div>
-            <div class="navbar-header col-md-10">
+            <div class="navbar-header col-md-10"   >
+                <div style="float:right;margin-top: 13px;" >
+                    <img alt="用户头像" class="fl" src="https://super-project.oss-cn-beijing.aliyuncs.com/timg.jpg" width="60" height="30">
+                    <span th:text="${account}" style="color: red"></span>
+                    <a href="../login/logout">退出登陆</a>
+                </div>
             </div>
         </div>
     </div>

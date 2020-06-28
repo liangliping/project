@@ -54,6 +54,8 @@ public class LoginController {
             UserBean userInfo = (UserBean) subject.getPrincipal();
             session.setAttribute(session.getId(), userInfo);
             session.setAttribute("userid",userInfo.getId());
+            //设置单位为秒，设置为-1永不过期
+            session.setMaxInactiveInterval(30*60);
             map.put("code", 0);
             map.put("message", "登陆成功！");
 
@@ -63,7 +65,7 @@ public class LoginController {
             map.put("message", "用户名不存在！");
             return map;
         } catch (IncorrectCredentialsException e){
-            logger.info("用户{}密码错误",userBean.getPwd());
+            logger.info("用户{}密码错误",userBean.getAccount());
             map.put("code", 3);
             map.put("message", "密码错误！");
             return map;
