@@ -17,22 +17,22 @@ public class TreeServiceImpl implements TreeService {
 
     /**
      * 查询所有树节点
-     * @param id
+     * @param pId
      * @return
      */
     @Override
-    public List<NavBean> getTrees(int id) {
+    public List<NavBean> getTrees(int pId) {
 
-        return findeTreeNode(id);
+        return findeTreeNode(pId);
     }
 
     /**
      *  // 递归查询
-     * @param pid
+     * @param pId
      * @return
      */
-    private List<NavBean> findeTreeNode(Integer pid) {
-        List<NavBean> trees = TreeConstants.getTreesAll(pid);
+    private List<NavBean> findeTreeNode(Integer pId) {
+        List<NavBean> trees = TreeConstants.getTreesAll(pId);
         for (NavBean nav : trees) {
             // 自己调用自己 传自己的id
             List<NavBean> findeTreeNode = findeTreeNode(nav.getId());

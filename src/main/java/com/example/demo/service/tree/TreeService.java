@@ -13,8 +13,8 @@ import java.util.List;
 public interface TreeService {
     /**
      * 查询所有树菜单节点
-     * @param id
+     * @param pId
      * @return
      */
-    List<NavBean> getTrees(int id);
+    List<NavBean> getTrees(int pId);
 }

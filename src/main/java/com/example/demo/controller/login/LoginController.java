@@ -77,6 +77,6 @@ public class LoginController {
     @ApiOperation(value="退出登录", notes="退出登录")
     @RequestMapping(value = "/logout",method = RequestMethod.POST)
     public String logout(){
-        return "view/login";
+        return "/login";
     }
 }
