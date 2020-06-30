@@ -2,6 +2,7 @@ package com.example.demo.controller.user;
 
 import com.example.demo.constants.constants.UserConstants;
 import com.example.demo.pojo.UserBean;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.List;
  * @author Mr.Liang
  * Date: 2020/6/30 15:32 <br>
  */
+@Api(tags = "用户查询")
 @RestController
 @RequestMapping("/user")
 public class UserController {
