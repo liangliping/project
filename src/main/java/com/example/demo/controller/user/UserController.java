@@ -5,6 +5,7 @@ import com.example.demo.pojo.UserBean;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,9 @@ public class UserController {
     @RequestMapping(value = "/queryUserById", method = RequestMethod.GET)
     public UserBean queryUserById(@ApiParam(name = "id", value = "用户id", required = true) int id) {
         UserBean user = UserConstants.getUserBeanById(id);
+        if (user == null){
+            throw new NullPointerException("User does not exist");
+        }
         return user;
     }
 }
