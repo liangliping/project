@@ -13,6 +13,7 @@ import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,6 +44,12 @@ public class LoginController {
     @ResponseBody
     public HashMap<String, Object> login( UserBean userBean, HttpServletRequest request){
 
+        if (StringUtils.isEmpty(userBean.getAccount())){
+            throw new NullPointerException("Account is empty");
+        }
+        if (StringUtils.isEmpty(userBean.getPwd())){
+            throw new NullPointerException("password is empty");
+        }
         //获取session
         HttpSession session = request.getSession();
         HashMap<String, Object> map = new HashMap<String, Object>(16);

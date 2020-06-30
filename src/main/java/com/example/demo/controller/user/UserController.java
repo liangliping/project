@@ -27,6 +27,7 @@ public class UserController {
      * @创建人 Mr.Liang
      * @描述 //TODO 查询所有用户列表
      * @创建时间 2020/6/30
+     * @备注  jmeter导出方法 jmeter -n -t D:\apache-jmeter-5.1.1\bin\测试计划.jmx -l .\file	 -e -o ./output
      **/
     @ApiOperation(value = "查询所有用户列表", notes = "查询所有用户列表")
     @RequestMapping(value = "/queryUserList", method = RequestMethod.GET)
