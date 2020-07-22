@@ -17,6 +17,7 @@ public class UserConstants {
      */
     private static UserBean user1 = new UserBean(1, "superHe", "22a43fbe3267faa448639dad376737ae", "18311156750");
     private static UserBean user2 = new UserBean(2, "superLiang", "82168999052d2ed053392d3bb65492dd", "18903100844");
+    private static UserBean user3 = new UserBean(3, "superLiu", "14e53660a43eeb690c56a2e8f3006bde", "");
 
     /**
      * //用户注册集合
@@ -26,6 +27,7 @@ public class UserConstants {
     static {
         list.add(user1);
         list.add(user2);
+        list.add(user3);
     }
 
     /**
