@@ -51,10 +51,10 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/*", "authc");
 
 //        filterChainDefinitionMap.put("/resources/**", "anon");
-//        filterChainDefinitionMap.put("/static/**", "anon"); //匿名访问静态资源
+        filterChainDefinitionMap.put("/static/**", "anon"); //匿名访问静态资源
 //        filterChainDefinitionMap.put("/login/login", "anon");
 //        filterChainDefinitionMap.put("/logout", "logout");
-//        filterChainDefinitionMap.put("/*/*", "authc");
+        filterChainDefinitionMap.put("/*/*", "authc");
 
 
 /*        //filterChainDefinitionMap.put("/toUser", "roles[系统管理员]");

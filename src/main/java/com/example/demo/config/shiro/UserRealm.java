@@ -59,7 +59,7 @@ public class UserRealm extends AuthorizingRealm {
             return null;
         }
 
-        return new SimpleAuthenticationInfo(userBean, userBean.getPwd(), this.getClass().getName());//放入shiro.调用CredentialsMatcher检验密码
+        return new SimpleAuthenticationInfo(userBean, userBean.getPwd(), "");//放入shiro.调用CredentialsMatcher检验密码
     }
 
 }
